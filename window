@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script>
+    /*var form = document.getElementById('submit');{
+     };
+    function validateform(){  
+    var name=document.box-form.name.value;  
+    var password=document.box-forma.senha.value;  
+    
+    if (name==null || name==""){  
+    alert("Name can't be blank");  
+    return false;  
+    }else if(password.length<6){  
+    alert("Password must be at least 6 characters long.");  
+    return false;  
+    }  
+    */
+    var attempt = 3; //Variable to count number of attempts
+    attempt --; //Decrementing by one
+    document.getElementById("username").disabled = true;
+    document.getElementById("password").disabled = true;
+    document.getElementById("submit").disabled = true;
+    return false;var attempt = 3; // Variable to count number of attempts.
+// Below function Executes on click of login button.
+    function validate(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    if ( username == "Formget" && password == "formget#123"){
+    alert ("Login successfully");
+    window.location = "success.html"; // Redirecting to other page.
+    return false;
+    }
+    else{
+    attempt --;// Decrementing by one.
+    alert("You have left "+attempt+" attempt;");
+    // Disabling fields after 3 attempts.
+    if( attempt == 0){
+    document.getElementById("username").disabled = true;
+    document.getElementById("password").disabled = true;
+    document.getElementById("submit").disabled = true;
+    return false;
+    }
+    }
+    }
+    
+    </script>
+</head>
+<body>
+        <div class="container">
+        <div class="main">
+        <h2>Javascript Login Form Validation</h2>
+        <form id="form_id" method="post" name="myform">
+        <label>User Name :</label>
+        <input type="text" name="username" id="username"/>
+        <label>Password :</label>
+        <input type="password" name="password" id="password"/>
+        <input type="button" value="Login" id="submit" onclick="validate()"/>
+        </form>
+        </div>
+        </div>
+</body>
+</html>
